@@ -1,3 +1,3 @@
 const webPush = require('web-push');
-
-console.log(webPush.generateVAPIDKeys())
+//create vapidKeys
+//console.log(webPush.generateVAPIDKeys())
