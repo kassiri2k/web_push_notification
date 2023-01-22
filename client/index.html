@@ -7,6 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PWN</title>
     <script src="client.js" defer></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "12181ca7-79a8-46ee-b9f4-81ac6d1e1f76",
+                safari_web_id: "",
+                notifyButton: {
+                    enable: true,
+                },
+                subdomainName: "ask123",
+            });
+        });
+    </script>
 </head>
 
 <body>
