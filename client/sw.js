@@ -1,5 +1,5 @@
 const cacheName = 'v1';
-const cacheAssets = ['index.html', 'client.js', 'thorfinn.jpg']
+const cacheAssets = ['index.html', 'client.js', 'thorfinn.jpg', 'pty.js']
 
 // install event
 self.addEventListener('install', event => {
