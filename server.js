@@ -16,11 +16,12 @@ webPush.setVapidDetails(
 
 app.post('/subscribe', (req, res) => {
 
-    subscribtion = req.body
-    console.log('Post Request', subscribtion)
+    subscription = req.body.subscription
+    const payload = req.body.payload
+    console.log('Post Request', subscription)
     res.status(201).json({})
 
-    webPush.sendNotification(subscribtion, "Text message").catch(e => console.log(e))
+    webPush.sendNotification(subscription, payload).catch(e => console.log(e))
 })
 
 

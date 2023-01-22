@@ -2,6 +2,7 @@ const button = document.querySelector('button')
 if ('serviceWorker' in navigator && 'PushManager' in window) {
 
     button.onclick = () => {
+        const payload = document.getElementById('notification-payload').value;
         navigator.serviceWorker.register('sw.js')
         navigator.serviceWorker.ready
             .then(reg => {
@@ -28,7 +29,10 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
                     headers: {
                         'Content-type': 'application/json'
                     },
-                    body: JSON.stringify(subscription),
+                    body: JSON.stringify({
+                        subscription: subscription,
+                        payload: payload
+                    }),
                 })
 
             })

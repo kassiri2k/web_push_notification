@@ -27,10 +27,10 @@ self.addEventListener("fetch", (event) => {
 });
 self.addEventListener('push', event => {
     const boss = 'Elon Musk';
-    var options = {
-        body: "Waiting for you feedback",
-    }
-    self.registration.showNotification(boss, options)
+    const payload = event.data ? event.data.text() : "Oups No Payload..."
+    self.registration.showNotification(boss, {
+        body: payload
+    })
 })
 
 
