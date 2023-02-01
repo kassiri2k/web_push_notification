@@ -1,6 +1,5 @@
-const button = document.querySelector('button')
+const button = document.getElementById('button1')
 if ('serviceWorker' in navigator && 'PushManager' in window) {
-
     button.onclick = () => {
         const payload = document.getElementById('notification-payload').value;
         navigator.serviceWorker.register('sw.js')
