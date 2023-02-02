@@ -5,6 +5,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
         navigator.serviceWorker.register('sw.js')
         navigator.serviceWorker.ready
             .then(reg => {
+                //returns a subscription or undefined
                 return reg.pushManager.getSubscription()
                     .then(async subscription => {
                         //if a subscription is found return it
