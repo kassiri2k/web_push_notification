@@ -1,7 +1,10 @@
+/*
 window.addEventListener("load", function() {
     console.log("clicked")
+    document.getElementsByClassName("onesignal-bell-launcher-button")[0].click()
     document.getElementById("subscribe-button").click();
 });
+*/
 /*
 const playwright = require('playwright');
 
