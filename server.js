@@ -2,6 +2,7 @@ const express = require('express');
 const webPush = require('web-push');
 const bodyParser = require('body-parser');
 const path = require('path');
+const dotenv = require('dotenv').config();
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'client')))
@@ -25,5 +26,5 @@ app.post('/subscribe', (req, res) => {
 })
 
 
-const PORT = 5000;
+const PORT = process.env.PORT_00;
 app.listen(PORT, () => console.log(`Server listening at port ${PORT}`))
