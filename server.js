@@ -1,12 +1,13 @@
 const express = require('express');
 const webPush = require('web-push');
-const bodyParser = require('body-parser');
+//remove body-parser bc is vulnerable to attacks
+// const bodyParser = require('body-parser');
 const path = require('path');
 const dotenv = require('dotenv').config();
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'client')))
-app.use(bodyParser.json())
+app.use(express.json())
 const pub = 'BAp8loXO5s2pqheDrtMF3E9VXkEGEDROh0SyuVxvz4KS9xevNOrRnbqdfAKVbjF7GbSPay_GHOSerNYW_m6FeSw';
 const priv = 'LcazQHSeK7wYnH42_N48oYax7QLfZHpbqisu7Oly7eE'
 webPush.setVapidDetails(
